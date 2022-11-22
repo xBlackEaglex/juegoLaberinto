@@ -6,6 +6,10 @@ package juegolaberinto;
 
 import java.awt.event.KeyEvent;
 
+import java.applet.AudioClip;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 
@@ -21,13 +25,15 @@ public class juego extends javax.swing.JFrame {
     int posx = 0;
     int posy = 0;
     
-    
+
 
     /**
      * Creates new form juego
      */
     public juego() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        sonidoFondo();
     }
 
     /**
@@ -40,7 +46,9 @@ public class juego extends javax.swing.JFrame {
     private void initComponents() {
 
         icon = new javax.swing.JLabel();
+        perro = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
+        perro1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -53,9 +61,15 @@ public class juego extends javax.swing.JFrame {
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bart2_little.gif"))); // NOI18N
         getContentPane().add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
+        perro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/perro.png"))); // NOI18N
+        getContentPane().add(perro, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 70, 50));
+
         back.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/laberinto.png"))); // NOI18N
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 540));
+
+        perro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/perro.png"))); // NOI18N
+        getContentPane().add(perro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 70, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -134,24 +148,30 @@ public class juego extends javax.swing.JFrame {
          
          //fila final columna 2
          
-         
-        if ((posx==140) && (posy>=200 && posy<=490)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=490){
+        if ((posx == 140) && (posy >= 200 && posy <= 490)) {
+            if (comp.equalsIgnoreCase("Abajo")) {
+                if (posy != 490) {
                     posy += mov;
                     posx += 0;
                     icon.setLocation(posx, posy);
                 }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=200){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
+            } 
+            else if (comp.equalsIgnoreCase("Arriba")) {
+                if (posy != 200) {
+                    posy -= mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
             }
-        }
+            
+            if ((posx == 140) && (posy == 210)){
+                
+                sonidoCaramba();
+                posx = 0;
+                posy = 0;
+                icon.setLocation(posx, posy);
+                
+            }
         }
         
         
@@ -218,6 +238,17 @@ public class juego extends javax.swing.JFrame {
                 icon.setLocation(posx, posy);
             }
         }
+            
+            
+        if ((posx == 740) && (posy == 0)){
+
+            sonidoCaramba();
+            posx = 0;
+            posy = 0;
+            icon.setLocation(posx, posy);
+
+        }    
+            
         }
         
         //  columna 2 fila 2 
@@ -302,6 +333,16 @@ public class juego extends javax.swing.JFrame {
                 icon.setLocation(posx, posy);
             }
         }
+            
+        if ((posx == 640) && (posy == 100)){
+
+            sonidoBurla();
+
+
+        }
+            
+            
+            
         }
         
         // columna 3 fila 2
@@ -366,6 +407,18 @@ public class juego extends javax.swing.JFrame {
                 icon.setLocation(posx, posy);
             }
         }
+            
+            
+        if ((posx == 830) && (posy == 480)){
+            sonidoGanar();
+            mensaje();
+            posx = 0;
+            posy = 0;
+            icon.setLocation(posx, posy);
+
+        }
+            
+            
         }
         
         // columna 2 fila final 
@@ -438,6 +491,38 @@ public class juego extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formKeyPressed
 
+    public void sonidoFondo () {
+        AudioClip sonido;
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/audio.wav"));
+        sonido.loop();
+    }
+    
+    public void sonidoBurla () {
+        AudioClip sonido;
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/aha.wav"));
+        sonido.play();
+    }
+     
+    public void sonidoGanar () {
+        AudioClip sonido;
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/duff.wav"));
+        sonido.play();
+    }
+    
+    public void sonidoCaramba () {
+        AudioClip sonido;
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/caramba.wav"));
+        sonido.play();
+    }
+    
+    
+    public void mensaje (){
+        Icon ico = new ImageIcon(getClass().getResource("/img/fiesta.png"));
+        JOptionPane.showMessageDialog(null,"Filicidades","Ganaste",JOptionPane.PLAIN_MESSAGE, ico);
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -476,5 +561,7 @@ public class juego extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel back;
     private javax.swing.JLabel icon;
+    private javax.swing.JLabel perro;
+    private javax.swing.JLabel perro1;
     // End of variables declaration//GEN-END:variables
 }
