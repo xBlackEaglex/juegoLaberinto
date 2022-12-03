@@ -82,9 +82,9 @@ public class juego3 extends javax.swing.JFrame {
         
         comp = KeyEvent.getKeyText(evt.getKeyCode());
         
-        if ((posx>=0 && posx<=200) && (posy>=0 && posy<=0)){
+        if ((posx>=0 && posx<=750) && (posy>=0 && posy<=0)){
             if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=200){
+                if(posx!=750){
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
@@ -98,6 +98,15 @@ public class juego3 extends javax.swing.JFrame {
                 posy -= 0;
                 icon.setLocation(posx, posy);
             }
+        }
+            
+        if ((posx == 750) && (posy == 0)) {
+
+            sonidoPerder();
+            posx = 0;
+            posy = 0;
+            icon.setLocation(posx, posy);
+
         }
         }
         
@@ -124,365 +133,7 @@ public class juego3 extends javax.swing.JFrame {
         }
         
         
-        // columna 1 fila final
-        
-         if ((posx>=0 && posx<=140) && (posy==490)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=140){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=0){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-         
-         
-         //fila final columna 2
-         
-        if ((posx == 140) && (posy >= 200 && posy <= 490)) {
-            if (comp.equalsIgnoreCase("Abajo")) {
-                if (posy != 490) {
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-            } 
-            else if (comp.equalsIgnoreCase("Arriba")) {
-                if (posy != 200) {
-                    posy -= mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-            }
-            
-            if ((posx == 140) && (posy == 210)){
-                
-                sonidoCaramba();
-                posx = 0;
-                posy = 0;
-                icon.setLocation(posx, posy);
-                
-            }
-        }
-        
-        
-        // culumna 1 fila central
-        
-        if ((posx>=0 && posx<=360) && (posy==100)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=360){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=0){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        
-        //  columna 2 fila central
-        
-        if ((posx==360) && (posy>=0 && posy<=100)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=100){
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=0){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        
-        //columna 2 fila 1
-        
-        if ((posx>=360 && posx<=770) && (posy==0)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=770){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=360){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-            
-            
-        if ((posx == 740) && (posy == 0)){
-
-            sonidoCaramba();
-            posx = 0;
-            posy = 0;
-            icon.setLocation(posx, posy);
-
-        }    
-            
-        }
-        
-        //  columna 2 fila 2 
-        
-        if ((posx==250) && (posy>=100 && posy<=490)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=490){
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=100){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        //  columna 2 fila 2
-        
-        if ((posx>=250 && posx<=830) && (posy==190)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=830){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=250){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        // fila 2 columna final
-        
-        if ((posx==830) && (posy>=100 && posy<=190)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=190){
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=100){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        // columna final fila 2
-        
-        if ((posx>=480 && posx<=830) && (posy==100)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=830){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=480){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-            
-        if ((posx == 640) && (posy == 100)){
-
-            sonidoBurla();
-
-
-        }
-            
-            
-            
-        }
-        
-        // columna 3 fila 2
-        
-        if ((posx==480) && (posy>=100 && posy<=190)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=190){
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=100){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        // columna 2 fila 3
-        
-        if ((posx>=250 && posx<=830) && (posy==290)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=830){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=250){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        // columna final fila final   ...   paso final
-        
-        
-        if ((posx==830) && (posy>=290 && posy<=480)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=480){
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=290){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-            
-            
-        if ((posx == 830) && (posy == 480)){
-            sonidoGanar();
-            mensaje();
-            posx = 0;
-            posy = 0;
-            icon.setLocation(posx, posy);
-
-        }
-            
-            
-        }
-        
-        // columna 2 fila final 
-        
-        if ((posx>=250 && posx<=690) && (posy==490)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=690){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=250){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        // columna 4 fila final
-        
-        if ((posx==690) && (posy>=390 && posy<=490)){
-            if (comp.equalsIgnoreCase("Abajo")){
-                if(posy!=490){
-                    posy += mov;
-                    posx += 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Arriba")){
-            if(posy!=390){
-                posy -= mov;
-                posx += 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
-        
-        // columna 5 fila 3
-        
-        if ((posx>=390 && posx<=690) && (posy==390)){
-            if (comp.equalsIgnoreCase("Derecha")){
-                if(posx!=690){
-                    posx += mov;
-                    posy -= 0;
-                    icon.setLocation(posx, posy);
-                }
-        }
-        
-        
-        else if (comp.equalsIgnoreCase("Izquierda")){
-            if(posx!=390){
-                posx -= mov;
-                posy -= 0;
-                icon.setLocation(posx, posy);
-            }
-        }
-        }
+        // 
         
         
         
@@ -493,25 +144,20 @@ public class juego3 extends javax.swing.JFrame {
 
     public void sonidoFondo () {
         AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/audio.wav"));
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/zombie.wav"));
         sonido.loop();
     }
     
-    public void sonidoBurla () {
-        AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/aha.wav"));
-        sonido.play();
-    }
      
     public void sonidoGanar () {
         AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/duff.wav"));
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/grito.wav"));
         sonido.play();
     }
     
-    public void sonidoCaramba () {
+    public void sonidoPerder () {
         AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/caramba.wav"));
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/disparo.wav"));
         sonido.play();
     }
     

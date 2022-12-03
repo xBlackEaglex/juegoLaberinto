@@ -88,6 +88,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -97,6 +98,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -132,6 +134,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -141,6 +144,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -183,6 +187,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -192,6 +197,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -227,6 +233,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -236,6 +243,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
             
@@ -280,6 +288,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -289,6 +298,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -322,6 +332,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -331,6 +342,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
             
@@ -374,6 +386,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -383,6 +396,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -429,6 +443,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -438,6 +453,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -471,6 +487,7 @@ public class juego extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha ();
                 }
         }
         
@@ -480,6 +497,7 @@ public class juego extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda ();
             }
         }
         }
@@ -521,6 +539,18 @@ public class juego extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Filicidades","Ganaste",JOptionPane.PLAIN_MESSAGE, ico);
     }
     
+    
+    public void izquierda (){
+        Icon icono;
+        icono = new ImageIcon(getClass().getResource("/img/bart2.gif"));
+        icon.setIcon(icono);
+    }
+    
+        public void derecha (){
+        Icon icono;
+        icono = new ImageIcon(getClass().getResource("/img/bart2_little.gif"));
+        icon.setIcon(icono);
+    }
     
     
     /**
