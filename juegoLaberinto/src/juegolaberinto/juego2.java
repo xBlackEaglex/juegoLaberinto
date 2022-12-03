@@ -25,6 +25,7 @@ public class juego2 extends javax.swing.JFrame {
     String comp;
     int posx = 0;
     int posy = 0;
+    int music = 0;
     
 
 
@@ -359,6 +360,7 @@ public class juego2 extends javax.swing.JFrame {
 
                 sonidoGanar();
                 mensaje();
+                menu();
                 posx = 0;
                 posy = 0;
                 icon.setLocation(posx, posy);
@@ -374,7 +376,15 @@ public class juego2 extends javax.swing.JFrame {
     public void sonidoFondo () {
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/pokemon.wav"));
-        sonido.loop();
+        
+        if (music == 0){
+           sonido.loop(); 
+           music = 1;
+        }
+        else {
+            sonido.stop();
+        }
+        
     }
    
      
@@ -394,6 +404,7 @@ public class juego2 extends javax.swing.JFrame {
     public void mensaje (){
         Icon ico = new ImageIcon(getClass().getResource("/img/fiesta.png"));
         JOptionPane.showMessageDialog(null,"Filicidades","Ganaste",JOptionPane.PLAIN_MESSAGE, ico);
+        sonidoFondo();
     }
     
         public void izquierda (){
@@ -407,6 +418,16 @@ public class juego2 extends javax.swing.JFrame {
         icono = new ImageIcon(getClass().getResource("/img/pikachu.gif"));
         icon.setIcon(icono);
     }
+        
+        public void menu (){
+            
+        menu ob = new menu();
+        
+        
+        ob.setVisible(true);
+            
+        dispose(); 
+    } 
     
     
     

@@ -24,6 +24,7 @@ public class juego3 extends javax.swing.JFrame {
     String comp;
     int posx = 0;
     int posy = 0;
+    int music = 0;
     
 
 
@@ -88,6 +89,7 @@ public class juego3 extends javax.swing.JFrame {
                     posx += mov;
                     posy -= 0;
                     icon.setLocation(posx, posy);
+                    derecha();
                 }
         }
         
@@ -97,6 +99,7 @@ public class juego3 extends javax.swing.JFrame {
                 posx -= mov;
                 posy -= 0;
                 icon.setLocation(posx, posy);
+                izquierda();
             }
         }
             
@@ -133,7 +136,324 @@ public class juego3 extends javax.swing.JFrame {
         }
         
         
-        // 
+        // fila final
+        
+        if ((posx>=0 && posx<=690) && (posy==490)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=690){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=0){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+        }
+        
+        //  fila final columna 3
+        
+        if ((posx==110) && (posy>=400 && posy<=490)){
+            if (comp.equalsIgnoreCase("Abajo")){
+                if(posy!=490){
+                    posy += mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Arriba")){
+            if(posy!=400){
+                posy -= mov;
+                posx += 0;
+                icon.setLocation(posx, posy);
+            }
+        }
+        }
+        
+        // fila 5 columna 2
+        
+        if ((posx>=110 && posx<=700) && (posy==400)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=700){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=110){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+        }
+        
+        // fila 5 columna 5
+        
+        if ((posx==700) && (posy>=300 && posy<=400)){
+            if (comp.equalsIgnoreCase("Abajo")){
+                if(posy!=400){
+                    posy += mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Arriba")){
+            if(posy!=300){
+                posy -= mov;
+                posx += 0;
+                icon.setLocation(posx, posy);
+            }
+        }
+        }
+        
+        // fila 4 columna 2
+        
+        if ((posx>=200 && posx<=700) && (posy==300)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=700){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=200){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+            
+        if ((posx == 200) && (posy == 300)) {
+
+            sonidoPerder();
+            posx = 0;
+            posy = 0;
+            icon.setLocation(posx, posy);
+
+        }
+        }
+        
+        // fila 2 columna 2
+        
+        if ((posx>=0 && posx<=180) && (posy==100)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=180){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=0){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+        }
+        
+        // fila 3 columna 2
+        
+        if ((posx>=0 && posx<=180) && (posy==200)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=180){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=0){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+        }
+        
+        
+        // fila 2 columna 2
+        
+        if ((posx==180) && (posy>=100 && posy<=290)){
+            if (comp.equalsIgnoreCase("Abajo")){
+                if(posy!=290){
+                    posy += mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Arriba")){
+            if(posy!=100){
+                posy -= mov;
+                posx += 0;
+                icon.setLocation(posx, posy);
+            }
+        }
+        if ((posx == 180) && (posy == 270)) {
+
+            sonidoPerder();
+            posx = 0;
+            posy = 0;
+            icon.setLocation(posx, posy);
+
+        }
+        }
+        
+        
+        // fila 2 columna 4
+        
+        if ((posx==420) && (posy>=0 && posy<=100)){
+            if (comp.equalsIgnoreCase("Abajo")){
+                if(posy!=100){
+                    posy += mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Arriba")){
+            if(posy!=0){
+                posy -= mov;
+                posx += 0;
+                icon.setLocation(posx, posy);
+            }
+        }
+        }
+        
+        // fila 2 columna 3
+        
+        if ((posx>=300 && posx<=750) && (posy==100)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=750){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=300){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+        }
+        
+        // fila 2 columna 3
+        
+        if ((posx==300) && (posy>=100 && posy<=200)){
+            if (comp.equalsIgnoreCase("Abajo")){
+                if(posy!=200){
+                    posy += mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Arriba")){
+            if(posy!=100){
+                posy -= mov;
+                posx += 0;
+                icon.setLocation(posx, posy);
+            }
+        }
+        }
+        
+        // fila 3 columna 3
+        
+        if ((posx>=300 && posx<=820) && (posy==200)){
+            if (comp.equalsIgnoreCase("Derecha")){
+                if(posx!=820){
+                    posx += mov;
+                    posy -= 0;
+                    icon.setLocation(posx, posy);
+                    derecha();
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Izquierda")){
+            if(posx!=300){
+                posx -= mov;
+                posy -= 0;
+                icon.setLocation(posx, posy);
+                izquierda();
+            }
+        }
+        }
+        
+        // final
+        
+        if ((posx==820) && (posy>=200 && posy<=490)){
+            if (comp.equalsIgnoreCase("Abajo")){
+                if(posy!=490){
+                    posy += mov;
+                    posx += 0;
+                    icon.setLocation(posx, posy);
+                }
+        }
+        
+        
+        else if (comp.equalsIgnoreCase("Arriba")){
+            if(posy!=200){
+                posy -= mov;
+                posx += 0;
+                icon.setLocation(posx, posy);
+            }
+        }
+        if ((posx == 820) && (posy == 470)) {
+
+            sonidoGanar();
+            mensaje();
+            menu();
+            posx = 0;
+            posy = 0;
+            icon.setLocation(posx, posy);
+
+        }
+        }
+        
+     
+        
         
         
         
@@ -145,7 +465,15 @@ public class juego3 extends javax.swing.JFrame {
     public void sonidoFondo () {
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/zombie.wav"));
-        sonido.loop();
+        
+        if (music == 0){
+           sonido.loop(); 
+           music = 1;
+        }
+        else {
+            sonido.stop();
+        }
+        
     }
     
      
@@ -165,7 +493,30 @@ public class juego3 extends javax.swing.JFrame {
     public void mensaje (){
         Icon ico = new ImageIcon(getClass().getResource("/img/fiesta.png"));
         JOptionPane.showMessageDialog(null,"Filicidades","Ganaste",JOptionPane.PLAIN_MESSAGE, ico);
+        sonidoFondo();
     }
+    
+        public void izquierda (){
+        Icon icono;
+        icono = new ImageIcon(getClass().getResource("/img/zombie2.gif"));
+        icon.setIcon(icono);
+    }
+    
+        public void derecha (){
+        Icon icono;
+        icono = new ImageIcon(getClass().getResource("/img/zombie.gif"));
+        icon.setIcon(icono);
+    }
+        
+        public void menu (){
+            
+        menu ob = new menu();
+        
+        
+        ob.setVisible(true);
+            
+        dispose(); 
+    } 
     
     
     

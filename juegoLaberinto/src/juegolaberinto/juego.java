@@ -24,6 +24,7 @@ public class juego extends javax.swing.JFrame {
     String comp;
     int posx = 0;
     int posy = 0;
+    int music = 0;
     
 
 
@@ -426,6 +427,7 @@ public class juego extends javax.swing.JFrame {
         if ((posx == 830) && (posy == 480)){
             sonidoGanar();
             mensaje();
+            menu();
             posx = 0;
             posy = 0;
             icon.setLocation(posx, posy);
@@ -512,7 +514,16 @@ public class juego extends javax.swing.JFrame {
     public void sonidoFondo () {
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audio/audio.wav"));
-        sonido.loop();
+        
+        
+        if (music == 0){
+           sonido.loop(); 
+           music = 1;
+        }
+        else {
+            sonido.stop();
+        }
+        
     }
     
     public void sonidoBurla () {
@@ -537,6 +548,7 @@ public class juego extends javax.swing.JFrame {
     public void mensaje (){
         Icon ico = new ImageIcon(getClass().getResource("/img/fiesta.png"));
         JOptionPane.showMessageDialog(null,"Filicidades","Ganaste",JOptionPane.PLAIN_MESSAGE, ico);
+        sonidoFondo();
     }
     
     
@@ -551,6 +563,18 @@ public class juego extends javax.swing.JFrame {
         icono = new ImageIcon(getClass().getResource("/img/bart2_little.gif"));
         icon.setIcon(icono);
     }
+        
+        public void menu (){
+            
+        menu ob = new menu();
+        
+        
+        ob.setVisible(true);
+            
+        dispose(); 
+    }        
+        
+        
     
     
     /**
